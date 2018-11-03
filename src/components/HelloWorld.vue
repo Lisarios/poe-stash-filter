@@ -31,11 +31,53 @@
 </template>
 
 <script>
+import axios from 'axios'
+import cheerio from 'cheerio'
+
 export default {
   name: 'HelloWorld',
   props: {
     msg: String
+  },
+  methods: {
+    getInfoFetch : function () {
+      fetch
+    },
+    getInfoAxios : function () {
+      console.log('dans la méthode getInfoAxios');
+      console.log(cheerio);
+      axios.get('https://www.pathofexile.com/login', {
+        method: 'GET',
+        mode: 'cors',
+        headers: {
+          'Access-Control-Allow-Origin': '*',
+          'Content-Type': 'application/json',
+        },
+        //withCredentials: true,
+        //credentials: 'same-origin',
+      })
+        .then(response => {
+          console.log(response.data);
+          
+          })
+    }
+  },
+  mounted () {
+    console.log('test before async function');
+    this.getInfoAxios();
+    /*
+    async function getLoginPage() {
+      console.log('test');
+      await this.getInfoAxios();
+    }
+    */
+   /*
+    return new Promise(resolve => {
+      this.getInfoAxios().resolve()
+    })
+    */
   }
+  
 }
 </script>
 
