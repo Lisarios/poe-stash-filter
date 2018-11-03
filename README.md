@@ -1,4 +1,4 @@
-# poe-stash-filter-plugin
+# POE STASH FILTER
 
 ## Project setup
 ```
